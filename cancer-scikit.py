@@ -22,7 +22,7 @@ cancer.drop(cancer.columns.difference(['case_submitter_id', 'age_at_index', 'day
 
 
 # Number of rows deleted because they had a NaN value
-print("Number of rows deleted because they had a NaN value: " + str(cancer.isna().any(axis=1).sum()) + "\n")
+# print("Number of rows deleted because they had a NaN value: " + str(cancer.isna().any(axis=1).sum()) + "\n")
 
 # Rows that has a NaN value are dropped
 cancer = cancer.dropna()
@@ -73,7 +73,7 @@ type_df = type_df.set_index("case_submitter_id")
 
 
 
-# Determining that are thought be necessary
+# Determining features that are thought be necessary
 # constructing a new dataframe named 'death_df' for normalization and one hot encoding operations
 death_df = cancer[['age_at_index', 'days_to_death', 'age_at_diagnosis', 'icd_10_code',
                                                   'primary_diagnosis','year_of_death', 'prior_malignancy', 'prior_treatment',
