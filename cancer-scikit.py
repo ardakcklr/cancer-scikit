@@ -123,7 +123,8 @@ prediction_df[['age_at_index']] = MinMaxScaler().fit_transform(np.array(predicti
 prediction_df[['age_at_diagnosis']] = MinMaxScaler().fit_transform(np.array(prediction_df[['age_at_diagnosis']]).reshape(-1,1))
 prediction_df[['year_of_death']] = MinMaxScaler().fit_transform(np.array(prediction_df[['year_of_death']]).reshape(-1,1))
 prediction_df[['year_of_diagnosis']] = MinMaxScaler().fit_transform(np.array(prediction_df[['year_of_diagnosis']]).reshape(-1,1))
-# İşlenemeyecek object değerli sütunların silinmesi
+
+# Dropping columns with object values since they are not going to be used
 prediction_df = prediction_df.drop(['icd_10_code', 'primary_diagnosis', 'prior_malignancy', 'prior_treatment',
                    'tissue_or_organ_of_origin', 'treatment_type'], axis=1)
 
